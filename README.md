@@ -21,8 +21,6 @@ INSTALED_APPS = (
 )
 ```
 
-```
-
 *run commands*
 
 ```
