@@ -1,4 +1,9 @@
 *.log
 *.pot
 *.pyc
-local_settings.py
+build
+dist
+django_sliders.egg-info/*
+.project
+.pydevproject
+.idea
