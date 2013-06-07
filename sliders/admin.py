@@ -4,7 +4,8 @@ from sliders.models import SliderPhoto, Slider
 
 class SliderPhotoAdmin(admin.TabularInline):
     model = SliderPhoto
-
+    sortable_field_name = "order"
+    extra = 0
 
 class SliderAdmin(admin.ModelAdmin):
 
