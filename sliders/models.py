@@ -38,6 +38,13 @@ class SliderPhoto(models.Model):
             extensions=('.jpg', '.png'))
     else:
         image = models.ImageField(upload_to='sliders/%Y/%m/%d')
+
+    title = models.CharField(_('Title'), max_length=255, null=True,
+                             blank=True)
+    description = models.TextField(_('Description'), null=True, blank=True)
+    links_to = models.CharField(_('Links To'), null=True, blank=True,
+                                max_length=255)
+
     is_active = models.BooleanField(_('Is active'), default=True)
     active_from = models.DateTimeField(null=True, blank=True)
     active_to = models.DateTimeField(null=True, blank=True)
