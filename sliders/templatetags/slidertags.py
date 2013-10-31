@@ -12,8 +12,10 @@ def sliders(slider_slug, limit=None):
 
         usage: {% sliders slider_slug 5 as slider_items %}
     """
+    print slider_slug
     queryset = SliderPhoto.objects.activated().filter(
         slider__slug_name=slider_slug)
+    print queryset
     if limit:
         queryset = queryset[:limit]
     return queryset

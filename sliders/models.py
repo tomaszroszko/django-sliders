@@ -70,7 +70,7 @@ class SliderPhoto(models.Model):
         ordering = ('order',)
 
     def __unicode__(self):
-        return self.image.url
+        return self.get_title()
 
     def get_title(self):
         return self.title or self.get_from_content_object('title')
