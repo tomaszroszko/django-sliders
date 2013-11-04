@@ -85,8 +85,11 @@ class SliderPhoto(models.Model):
         return self.links_to or self.content_object.get_absolute_url()
 
     def get_from_content_object(self, field):
-        mapping_key = '%s.%s' % self.content_type.natural_key()
-        mapping = consts.SLIDE_FIELDS_MAPPING.get(mapping_key)
-        if mapping:
-            field = mapping[field]
-        return getattr(self.content_object, field, None)
+        if self.content_type:
+            mapping_key = '%s.%s' % self.content_type.natural_key()
+            mapping = consts.SLIDE_FIELDS_MAPPING.get(mapping_key)
+            if mapping:
+                field = mapping[field]
+            return getattr(self.content_object, field, None)
+        else:
+            return getattr(self, field)
