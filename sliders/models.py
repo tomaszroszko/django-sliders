@@ -61,6 +61,8 @@ class SliderPhoto(models.Model):
     active_from = models.DateTimeField(null=True, blank=True)
     active_to = models.DateTimeField(null=True, blank=True)
     order = models.IntegerField(_('Order'), default=0)
+    css_class = models.CharField(_('Css class'), null=True, blank=True,
+        choices=consts.SLIDE_CSS_CLASSES, max_length=50)
 
     objects = SliderPhotoManager()
 
