@@ -83,7 +83,7 @@ class SliderPhoto(models.Model):
 
     def get_absolute_url(self):
         if self.links_to:
-            return self.linkt_to
+            return self.links_to
         if self.content_object:
             return self.content_object.get_absolute_url()
         return '#'
