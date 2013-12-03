@@ -9,7 +9,7 @@ class SliderPhotoAdmin(admin.StackedInline):
     extra = 0
     fieldsets = (
         (_('Slide Content'), {
-            'fields': ('image', 'title', 'description', 'links_to'),
+            'fields': ('image', 'video', 'title', 'description', 'links_to'),
             'classes': ("grp-collapse grp-close grp-closed",),
             'description': _('Fill those fields only if you do not connect'
             ' slide with any content')

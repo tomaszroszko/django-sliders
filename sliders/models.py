@@ -45,6 +45,8 @@ class SliderPhoto(models.Model):
         image = models.ImageField(upload_to='sliders/%Y/%m/%d', null=True,
             blank=True)
 
+    video = models.CharField(_('Video'), max_length=255, null=True, blank=True)
+
     title = models.CharField(_('Title'), max_length=255, null=True,
                              blank=True)
     description = models.TextField(_('Description'), null=True, blank=True)
@@ -79,6 +81,9 @@ class SliderPhoto(models.Model):
 
     def get_image(self):
         return self.image or self.get_from_content_object('image')
+
+    def get_video(self):
+        return self.video or self.get_from_content_object('video')
 
     def get_description(self):
         return self.description or self.get_from_content_object('description')
