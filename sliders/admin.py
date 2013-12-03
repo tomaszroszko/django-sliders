@@ -25,7 +25,7 @@ class SliderPhotoAdmin(admin.StackedInline):
             'classes': ("grp-collapse grp-close grp-closed",)
         }),
         (None, {
-            'fields': ('order',)
+            'fields': ('order','css_class')
         })
     )
 
